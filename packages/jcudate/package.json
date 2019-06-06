@@ -13,6 +13,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jcu/jcu-test.git"
@@ -23,5 +26,5 @@
   "bugs": {
     "url": "https://github.com/jcu/jcu-test/issues"
   },
-  "gitHead": "00a15823d5ba8ba4040326e094c271990ee93d31"
+  "gitHead": "7c7ec98ed53bc57a0178c34f34470f9ecabf0e60"
 }
