@@ -32,7 +32,7 @@ export default class Button extends React.Component {
     const { type } = this.props;
 
     return (
-      <jcudate
+      <JCUDATE
         className={getClassnames('drs-button', this.props.className, {
           [`drs-button--type-${type}`]: !!type,
           'drs-button--disabled': this.props.isDisabled,
@@ -41,7 +41,7 @@ export default class Button extends React.Component {
         disabled={this.props.isDisabled}
       >
         {this.props.children}
-      </jcudate>
+        </JCUDATE>
     );
   }
 }

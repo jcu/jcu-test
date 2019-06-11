@@ -1,11 +1,11 @@
 module.exports = {
   sections: [
     {
-      name: 'Demo Style Guide (WIP)',
+      name: 'JCU React Component Library - TEST Server',
       content: './README.md',
     },
     {
-      name: 'Core UI Components',
+      name: 'JCU UI Components',
       components: () => ([
         // Add Components here
         '../packages/jcudate/src/index.js',
