@@ -2,34 +2,34 @@
 
 ```js
 <div className="styleguidist__btns-wrap">
-  <JCUDATE
+  <JcuDate
     type="primary"
     onClick={() => { window.alert('Primary Button was Clicked'); }}
   >
     <span>Primary Button</span>
-  </JCUDATE>
+  </JcuDate>
   <br />
   <br />
-  <JCUDATE
+  <JcuDate
     type="secondary"
     onClick={() => { window.alert('Secondary Button was Clicked'); }}
   >
     <span>Secondary Button</span>
-  </JCUDATE>
+  </JcuDate>
   <br />
   <br />
-  <JCUDATE
+  <JcuDate
     onClick={() => { window.alert('Secondary Button was Clicked'); }}
   >
     <span>Normal Button</span>
-  </JCUDATE>
+  </JcuDate>
   <br />
   <br />
-  <JCUDATE
+  <JcuDate
     isDisabled
     onClick={() => { window.alert('Nothing happens on Click'); }}
   >
     <span>Disabled Button</span>
-  </JCUDATE>
+  </JcuDate>
 </div>
 ```

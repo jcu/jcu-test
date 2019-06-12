@@ -8,7 +8,7 @@ import './index.scss';
 /**
  * @example ../README.md
  */
-export default class Button extends React.Component {
+export default class JcuDate extends React.Component {
   static propTypes = {
     name: PropTypes.string,
     className: PropTypes.string,
@@ -32,7 +32,7 @@ export default class Button extends React.Component {
     const { type } = this.props;
 
     return (
-      <JCUDATE
+      <JcuDate
         className={getClassnames('drs-button', this.props.className, {
           [`drs-button--type-${type}`]: !!type,
           'drs-button--disabled': this.props.isDisabled,
@@ -41,7 +41,7 @@ export default class Button extends React.Component {
         disabled={this.props.isDisabled}
       >
         {this.props.children}
-        </JCUDATE>
+        </JcuDate>
     );
   }
 }
