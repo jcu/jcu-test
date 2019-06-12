@@ -1,7 +1,7 @@
 {
   "name": "@jcu-test/jcudate",
   "version": "0.0.5-alpha.0",
-  "description": "> TODO: description",
+  "description": "JCU Date components",
   "author": "Mahendra Patel <mkumar.a.patel@gmail.com>",
   "homepage": "https://github.com/jcu/jcu-test#readme",
   "license": "MIT",

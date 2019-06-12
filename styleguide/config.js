@@ -9,7 +9,7 @@ module.exports = {
       components: () => ([
         // Add Components here
         '../packages/jcudate/src/index.js',
-        //'../packages/text/src/index.js',
+        '../packages/jcudatetime/src/index.js',
       ]),
     },
     {
