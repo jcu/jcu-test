@@ -30,10 +30,10 @@ module.exports = {
       exclude: /(node_modules)/,
       use: [
         {
-          loader: 'babel-loader',
+          loader: 'babel',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-stage-0','@babel/preset-react'],
-            plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime'],
+            presets: ['es2015', 'stage-0', 'react'],
+            plugins: ['transform-runtime', 'lodash'],
           },
         },
       ],
