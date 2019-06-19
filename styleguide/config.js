@@ -8,7 +8,9 @@ module.exports = {
       name: 'JCU UI Components',
       components: () => ([
         // Add Components here
-        '../packages/jcudate/src/index.js',
+        '../packages/jcudate/src/JcuDateTime.js',
+        '../packages/jcudate/src/JcuDate.js',
+        '../packages/jcudate/src/JcuTime.js',
         //'../packages/text/src/index.js',
       ]),
     },

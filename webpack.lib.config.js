@@ -72,7 +72,7 @@ function config(env) {
       },
     
       ],
-    }
+    },
   };
 }
 
