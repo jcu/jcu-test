@@ -1,72 +1,78 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 
+const VENDER_LIBS = [
+  'react', 'react-dom','react-router-dom'
+]
+
 function config(env) {
-  const packageName = env.pkg;
-  const extractTextPlugin = new ExtractTextPlugin({ filename: 'index.min.css', allChunks: true });
+  const packageName = 'jcudate';
 
   return {
-    entry: path.resolve(__dirname, `./packages/${packageName}/src/index.js`),
+    entry: { 
+      path: path.resolve(__dirname, `./packages/${packageName}/src/index.js`),
+      vendor: VENDER_LIBS
+    },
     output: {
       path: path.resolve(__dirname, `./packages/${packageName}/dist/`),
-      filename: 'index.min.js',
-      library: `demoUILibrary${packageName}`,
-      libraryTarget: 'umd',
+      filename: '[name].[hash].js',
     },
-    externals: {
-      react: 'react',
-      'react-dom': 'react-dom',
-      'prop-types': 'prop-types',
-      classnames: 'classnames',
-    },
-    resolveLoader: {
-      moduleExtensions: ['-loader'],
-    },
-    module: {
-      rules: [{
-        test: /\.jsx?$/,
-        exclude: /(node_modules)/,
-        loader: 'babel',
+      optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all'
+                }
+            }
+        }
+      },
+      module: {
+      rules: [
+        // JavaScript/JSX Files
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
         query: {
           plugins: [
-            'transform-runtime',
-            'transform-react-remove-prop-types',
-            'add-react-displayname',
+            '@babel/plugin-proposal-class-properties',
           ],
-          presets:['es2015', 'stage-0', 'react'],
+          presets:[
+            '@babel/preset-env',
+            '@babel/preset-react'
+          ],
         },
-      }, {
+      },
+        // CSS files
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+        // SCSS Files
+        {
         test: /\.scss$/,
         exclude: /(node_modules|bower_components)/,
-        use: extractTextPlugin.extract({
-          fallback: 'style',
-          use: [
-            {
-              loader: 'css?minimize',
-            },
-            {
-              loader: 'postcss',
-              options: {
-                plugins: [autoprefixer({ browsers: ['> 1%', 'last 2 versions'] })],
-              },
-            },
-            {
-              loader: 'sass',
-              options: {
-                outputStyle: 'compressed',
-              },
-            },
-          ],
-        }),
-      }],
-    },
-    plugins: [
-      new webpack.optimize.UglifyJsPlugin({ minimize: true, sourceMap: false, compress: { warnings: false, drop_console: true } }),
-      extractTextPlugin,
-    ],
+        use: ['style-loader', 
+        'css-loader',
+        {
+          loader: 'postcss',
+          options: {
+            plugins: [autoprefixer({ overrideBroswerslist: ['> 1%', 'last 2 versions'] })],
+          },
+          },'sass-loader'],
+        },
+        // Image files
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: 'file-loader'
+      },
+    
+      ],
+    }
   };
 }
 

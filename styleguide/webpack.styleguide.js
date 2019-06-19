@@ -1,49 +1,59 @@
 const autoprefixer = require('autoprefixer');
-
+const path = require('path');
+const webpack = require('webpack');
+const htmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  resolveLoader: {
-    moduleExtensions: ['-loader'],
-  },
   module: {
-    rules: [{
+    rules: [
+      // JavaScript/JSX Files
+    {
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        plugins: [
+          '@babel/plugin-proposal-class-properties',
+        ],
+        presets:[
+          '@babel/preset-env',
+          '@babel/preset-react'
+        ],
+      },
+    },
+      // CSS files
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      // SCSS Files
+      {
       test: /\.scss$/,
-      exclude: /(node_modules)/,
-      use: [
-        'style',
-        'css',
-        {
-          loader: 'postcss',
-          options: {
-            plugins: [autoprefixer({ browsers: ['> 1%', 'last 2 versions'] })],
-          },
+      exclude: /(node_modules|bower_components)/,
+      use: ['style-loader', 
+      'css-loader',
+      {
+        loader: 'postcss',
+        options: {
+          plugins: [autoprefixer({ overrideBroswerslist: ['> 1%', 'last 2 versions'] })],
         },
-        {
-          loader: 'sass',
-          options: {
-            includePaths: ['/scss/'],
-          },
-        },
-      ],
-    }, {
-      test: /\.jsx?$/,
-      exclude: /(node_modules)/,
-      use: [
-        {
-          loader: 'babel',
-          options: {
-            presets: ['es2015', 'stage-0', 'react'],
-            plugins: ['transform-runtime', 'lodash'],
-          },
-        },
-      ],
-    }],
+        },'sass-loader'],
+      },
+      // Image files
+    {
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      use: 'file-loader'
+    },
+  
+    ],
   },
-  externals: {
-    // don't bundle the 'jquery' npm package with our bundle.js
-    jquery: 'jQuery',
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+   // use a template to create a index.html for builds
+   plugins: [
+    new htmlWebpackPlugin(
+      {
+        template: 'index.html'
+      }
+    ),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };

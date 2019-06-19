@@ -1,47 +1,38 @@
 // vendor modules
-import React from 'react';
-import PropTypes from 'prop-types';
-import getClassnames from 'classnames';
+import React from 'react'
+import moment from 'moment'
 
-import './index.scss';
 
 /**
  * @example ../README.md
  */
-export default class Button extends React.Component {
-  static propTypes = {
-    name: PropTypes.string,
-    className: PropTypes.string,
-    children: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element,
-      PropTypes.array,
-    ]),
-    type: PropTypes.oneOf(['primary', 'secondary']),
-    onClick: PropTypes.func,
-    isDisabled: PropTypes.bool,
-  };
+class JcuDateTime extends React.Component {
+  static defaultProps = {
+      static: false,
+      dateTime: false,
+      inputFormat: false,
+      outputFormat: 'D MMM YYYY h:mma',
+      relative: false
+  }
 
-  onClick = (e) => {
-    if (!this.props.isDisabled && this.props.onClick) {
-      this.props.onClick(e);
-    }
+  constructor(props) {
+      super(props)
+      // we only need live updates if:
+      // - we're showing the current time and they didn't say static
+      // - we're showing a relative time and they didn't say static
+      if (!props.static && ( (props.relative && props.dateTime) || (!props.relative && !props.dateTime) )) {
+          setInterval(()=> this.forceUpdate(), 500)
+      }
   }
 
   render() {
-    const { type } = this.props;
+      const dateTime = this.props.dateTime ? new moment(this.props.dateTime, this.props.inputFormat) : new moment()
 
-    return (
-      <JCUDATE
-        className={getClassnames('drs-button', this.props.className, {
-          [`drs-button--type-${type}`]: !!type,
-          'drs-button--disabled': this.props.isDisabled,
-        })}
-        onClick={(e) => { this.onClick(e); }}
-        disabled={this.props.isDisabled}
-      >
-        {this.props.children}
-        </JCUDATE>
-    );
+      const relative = this.props.dateTime ? new moment(this.props.dateTime, this.props.inputFormat).fromNow() : 'now'
+      const nonrelative =<>{ dateTime.format(this.props.outputFormat)}</>
+
+      return ( this.props.relative ? relative : nonrelative )
   }
 }
+
+export default JcuDateTime

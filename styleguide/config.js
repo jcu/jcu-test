@@ -20,6 +20,8 @@ module.exports = {
       ]),
     },
   ],
-  template: './template.html',
+  template: {
+    favicon: 'https://www.jcu.edu.au/__data/assets/file/0006/642327/favicon.ico?v=0.1.0'
+  },
   webpackConfig: require('./webpack.styleguide.js'),
 };
