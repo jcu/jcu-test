@@ -2,7 +2,7 @@ import React from 'react'
 
 import JcuDateTime from './JcuDateTime';
 
-class Time extends React.Component {
+class JcuTime extends React.Component {
     static defaultProps = {
         static: false,
         time: false,
@@ -24,4 +24,4 @@ class Time extends React.Component {
     }
 }
 
-export default Time
+export default JcuTime

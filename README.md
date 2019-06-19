@@ -64,5 +64,5 @@ Run the command `yarn run publish:npm`. The command executes the following steps
 **Note:** Once this step is done. You can commit and publish to github. Of course, you can also use lerna compeletly to manage your git workflow too.
 
 ## Building Styleguide for Hosting(On Github or any other hosting option)
-Run `yarn run styleguide:build`. This will create an index.html file and a build directory that contains the react-styleguidist JS bundle. You can commit this to your repository if you would like to host your styleguide on Github.
+Run `yarn run styleguide:build`. This will create an index.html file and a build directory that contains the react-styleguidist JS bundle. This can be commited repository when our server is ready to host styleguide.
 
