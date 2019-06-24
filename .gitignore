@@ -1,5 +1,9 @@
 **/node_modules
 **/project
+.sass-cache/
+**/node_modules/
+dist/
+**/dist/
 
 .idea
 *.iml
@@ -12,6 +16,8 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log
+**/npm-debug.log
 
 # Runtime data
 pids
