@@ -2,9 +2,10 @@
 	"name": "root",
 	"private": true,
 	"scripts": {
+		"bootstrap": "lerna bootstrap",
 		"lint": "eslint --ext .jsx --ext js ./packages/",
-		"styleguide": "styleguidist server --config ./styleguide/config.js",
-		"styleguide:build": "rm -rf build && rm -f index.html && styleguidist build --config ./styleguide/config.js",
+		"styleguide": "styleguidist server --config ./styleguide/styleguide.config.js",
+		"styleguide:build": "rm -rf build && rm -f index.html && styleguidist build --config ./styleguide/styleguide.config.js",
 		"publish:npm": "lerna bootstrap && lerna exec --parallel yarn run build && lerna publish --skip-git --registry=https://registry.npmjs.org/"
 	},
 	"devDependencies": {

@@ -1,17 +1,14 @@
 module.exports = {
   sections: [
     {
-      name: 'JCU React Component Library - TEST Server',
+      name: 'JCU React Component Library',
       content: './README.md',
     },
     {
-      name: 'JCU UI Components',
+      name: 'JCU Utility Components',
       components: () => ([
         // Add Components here
-        '../packages/jcudate/src/JcuDateTime.js',
-        '../packages/jcudate/src/JcuDate.js',
-        '../packages/jcudate/src/JcuTime.js',
-        //'../packages/text/src/index.js',
+        '../packages/jcudate/**/*.js'
       ]),
     },
     {
