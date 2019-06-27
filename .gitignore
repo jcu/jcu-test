@@ -1,8 +1,9 @@
-**/node_modules
+node_modules
 **/project
 .sass-cache/
 **/node_modules/
 dist/
+build/
 **/dist/
 
 .idea

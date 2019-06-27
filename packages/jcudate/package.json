@@ -1,7 +1,7 @@
 {
   "name": "@jcu-test/jcudate",
-  "version": "0.0.5-alpha.0",
-  "description": "JCU Date components",
+  "version": "0.0.7-alpha.0",
+  "description": "> TODO: description",
   "author": "Mahendra Patel <mkumar.a.patel@gmail.com>",
   "homepage": "https://github.com/jcu/jcu-test#readme",
   "license": "MIT",
@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/jcu/jcu-test/issues"
   },
-  "gitHead": "7c7ec98ed53bc57a0178c34f34470f9ecabf0e60",
+  "gitHead": "fa0797f808c2fcd3b49768aa1361ba570e53cb7e",
   "dependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",

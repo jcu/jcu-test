@@ -8,8 +8,10 @@ module.exports = {
       name: 'JCU UI Components',
       components: () => ([
         // Add Components here
-        '../packages/jcudate/src/index.js',
-        '../packages/jcudatetime/src/index.js',
+        '../packages/jcudate/src/JcuDateTime.js',
+        '../packages/jcudate/src/JcuDate.js',
+        '../packages/jcudate/src/JcuTime.js',
+        //'../packages/text/src/index.js',
       ]),
     },
     {
@@ -20,6 +22,8 @@ module.exports = {
       ]),
     },
   ],
-  template: './template.html',
+  template: {
+    favicon: 'https://www.jcu.edu.au/__data/assets/file/0006/642327/favicon.ico?v=0.1.0'
+  },
   webpackConfig: require('./webpack.styleguide.js'),
 };
