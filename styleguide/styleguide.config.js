@@ -17,6 +17,13 @@ module.exports = {
       ]),
     },
     {
+      name: 'JCU Layout Components',
+      components: () => ([
+        // Add Components here
+        '../packages/layout/**/Footer.js'
+      ]),
+    },
+    {
       name: 'Composite Components',
       components: () => ([
         // '../packages/input-group/src/index.js',
