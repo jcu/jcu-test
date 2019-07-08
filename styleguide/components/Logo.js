@@ -20,6 +20,7 @@ export function LogoRenderer ({ classes, children }) {
         width = '150px'
       />
       <br />
+      <br />
       {children}
     </h1>
   )
