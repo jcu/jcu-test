@@ -1,43 +1,46 @@
 
-This is a convenience wrapper of [`<JcuTime>`](#jcutime) with date-level default formats.
+This is a convenience wrapper of [`<JcuDateTime>`](#jcudatetime) with time-level default formats. Refer to that component for detailed documentation.
 
-Usually you will supply a date in the `date` prop, but if you don't it will show the current date.
-
-A JcuDate showing the current date will stay "current", so if your browser window is open over midnight the date below will update to show the new day.  If you don't want this, add the `static` prop.
+Usually you will supply a time in the `time` prop, but if you don't it will show the current time. The `static` prop prevents this, as described in JcuDateTime.
 
 ```jsx
-<p>Today is <JcuTime /></p>
+<p>Right now it's <JcuTime /></p>
 ```
 
-Supply the date you want displayed as a string in the `date` prop. The expected format is `YYYY-MM-DD`, e.g. `2020-12-25` for Christmas in 2020.  You can use a different input date format if you describe it in the `inputFormat` prop.  The format string for Unix timestamps is a capital `X`.
-
-JcuDate uses moment.js to parse and format dates, so check [that documentation](https://momentjs.com/docs/#/parsing/string-format/) for the full set of input formats.
+Supply the time you want displayed as a string in the `time` prop (this is the equivalent to JcuDateTime's `dateTime` prop). Note that you'll need to specify a date along with your time. The expected format for `time` is `YYYY-MM-DDTHH:MM:SS`, e.g. `2020-12-25T06:00:01` for one second after 6am on Christmas in 2020. Alternate input formats can be specified in `inputFormat`; refer to JcuDateTime for more information.
 
 ```jsx
 <p>
-    <JcuTime time="2020-12-25" />
-    <tt> supplied as "2020-12-25"</tt>
+    <JcuTime time="2020-12-25T06:00:01" />
+    <tt> (supplied as "2020-12-25T06:00:01")</tt>
 </p><p>
-    <JcuTime time="Dec 25, 2020" inputFormat="MMM DD, YYYY" />
-    <tt> supplied as "Dec 25, 2020"</tt>
+    <JcuTime time="6:01am Dec 25, 2020" inputFormat="H:MMa MMM DD, YYYY" />
+    <tt> (supplied as "6:01am Dec 25, 2020")</tt>
 </p><p>
-    <JcuTime time="day 360 of 2020" inputFormat="[day] DDD [of] YYYY" />
-    <tt> supplied as "day 360 of 2020"</tt>
+    <JcuTime time="day 360 of 2020 at 06:01" inputFormat="[day] DDD [of] YYYY [at] Ha" />
+    <tt> (supplied as "day 360 of 2020 at 6am")</tt>
 </p>
 ```
 
-You can also supply an output format in the `outputFormat` prop. Check the moment.js documentation for the [full set of output formats](https://momentjs.com/docs/#/displaying/format/) available.
+You can supply an output format in the `outputFormat` prop. Check JcuDateTime for specifics.
 
 ```jsx
-<JcuTime outputFormat="[it is] dddd [in the] wo [week of] YYYY" />
+<JcuTime outputFormat="[it is] m [minutes after] h a" />
 ```
 
-Consider if your users would prefer to see how long since, or until, the date you're displaying.  If you think a relative time is more useful, add the `relative` prop.  The following example uses `relative` to tell you how long ago Donald Trump assumed office as the 45th president of the United States.
+Your users may prefer to see how long since, or until, the time you're displaying.  Add the `relative` prop to show relative time ago or until.  The following example uses `relative` to tell you how long ago Donald Trump assumed office as the 45th president of the United States.
 
 ```jsx
-<JcuTime time="2017-01-20" relative />
+<JcuTime time="2017-01-20T12:00" relative />
 ```
 
-Relative dates will automatically update if enough time passes; to prevent that, add the `static` prop.
+Relative times will automatically update if enough time passes; to prevent that, add the `static` prop.
 
-You don't have to supply a date when using `relative`, but the relative representation of the current date will be displayed as "now".
+You don't have to supply a time when using `relative`, but the relative representation of the current time will be displayed as "now".
+
+### Future Features for JcuTime
+
+**Default date parts.** It's a chore to specify the date as well as the time; it should be possible to leave off the date part, and have it default to today. E.g. I should be able to use `<JcuTime time="17:00" />` and that implies knockoff time today.
+
+
+

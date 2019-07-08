@@ -1,11 +1,27 @@
 import React from 'react'
+import {PropTypes} from 'prop-types'
+
 import moment from 'moment'
 
 class JcuDateTime extends React.Component {
+
+    static propTypes = {
+        /** the point-in-time to be displayed */
+        dateTime: PropTypes.string,
+        /** if true, prevents the displayed moment from updating in real time */
+        static: PropTypes.bool,
+        /** format used by the `dateTime` prop. If not specified, will attempt some common formats. */
+        inputFormat: PropTypes.string,
+        /** format for displayed datetime */
+        outputFormat: PropTypes.string,
+        /** if true, show time-ago or time-until, rather than the moment itself */
+        relative: PropTypes.bool
+    }
+
     static defaultProps = {
+        dateTime: null,
         static: false,
-        dateTime: false,
-        inputFormat: false,
+        inputFormat: null,
         outputFormat: 'D MMM YYYY h:mma',
         relative: false
     }
@@ -22,8 +38,8 @@ class JcuDateTime extends React.Component {
 
     render() {
         const dateTime = this.props.dateTime ? new moment(this.props.dateTime, this.props.inputFormat) : new moment()
-
         const relative = this.props.dateTime ? new moment(this.props.dateTime, this.props.inputFormat).fromNow() : 'now'
+
         const nonrelative =<>{ dateTime.format(this.props.outputFormat)}</>
 
         return ( this.props.relative ? relative : nonrelative )

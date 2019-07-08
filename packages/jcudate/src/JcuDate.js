@@ -1,7 +1,7 @@
 import React from 'react'
 import {PropTypes} from 'prop-types'
 
-import JcuDateTime from './JcuDateTime';
+import JcuDateTime from './JcuDateTime'
 
 class JcuDate extends React.Component {
 
