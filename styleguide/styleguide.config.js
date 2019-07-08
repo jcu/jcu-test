@@ -6,7 +6,7 @@ module.exports = {
   styles,
   sections: [
     {
-      name: 'JCU React Component Library',
+      name: 'Introduction',
       content: './README.md',
     },
     {
@@ -24,13 +24,6 @@ module.exports = {
         '../packages/layout/**/JcuEnvironmentBanner.js',
         '../packages/layout/**/Footer.js'        
         
-      ]),
-    },
-    {
-      name: 'Composite Components',
-      components: () => ([
-        // '../packages/input-group/src/index.js',
-        //'../packages/card/src/index.js',
       ]),
     },
   ],
