@@ -20,8 +20,10 @@ module.exports = {
       name: 'JCU Layout Components',
       components: () => ([
         // Add Components here
-        '../packages/layout/**/Footer.js',
-        '../packages/layout/**/JcuEnvironmentBanner.js'
+        '../packages/layout/**/JcuNavBar.js',
+        '../packages/layout/**/JcuEnvironmentBanner.js',
+        '../packages/layout/**/Footer.js'        
+        
       ]),
     },
     {
