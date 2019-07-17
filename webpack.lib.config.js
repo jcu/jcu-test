@@ -12,12 +12,12 @@ function config(env) {
 
   return {
     entry: { 
-      path: path.resolve(__dirname, `./packages/${packageName}/index.js`),
+      path: path.resolve(__dirname, `./packages/${packageName}/src/index.js`),
       vendor: VENDER_LIBS
     },
     output: {
-      path: path.resolve(__dirname, `./packages/${packageName}/dist/`),
-      filename: '[name].[hash].js',
+      path: path.resolve(__dirname, `./packages/${packageName}/`),
+      filename: 'index.js',
     },
       optimization: {
         splitChunks: {

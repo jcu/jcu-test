@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "author": "Mahendra Patel <mkumar.a.patel@gmail.com>",
   "homepage": "https://github.com/jcu/jcu-test#readme",
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "publishConfig": {
     "access": "public"
   },
@@ -16,7 +16,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "webpack --config ../../webpack.lib.config.js --env.pkg=jcudate"
   },
-  "gitHead": "40ee246009313181324280bacced559f6346974d",
+  "gitHead": "6f53b1c2a45132cccf023e8051ace0ec65510e95",
   "dependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
