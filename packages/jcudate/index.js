@@ -1,3 +1,3 @@
-export { default as JcuDateTime } from './components/JcuDateTime';
-export { default as JcuDate } from './components/JcuDate';
-export { default as JcuTime } from './components/JcuTime';
+export { default as JcuDateTime } from './src/JcuDateTime';
+export { default as JcuDate } from './src/JcuDate';
+export { default as JcuTime } from './src/JcuTime';

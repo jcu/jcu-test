@@ -4,6 +4,7 @@
   "description": "> TODO: description",
   "author": "Mahendra Patel <mkumar.a.patel@gmail.com>",
   "homepage": "https://github.com/jcu/jcu-test#readme",
+  "main": "./dist/index.js",
   "publishConfig": {
     "access": "public"
   },

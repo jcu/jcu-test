@@ -12,7 +12,7 @@ function config(env) {
 
   return {
     entry: { 
-      path: path.resolve(__dirname, `./packages/${packageName}/src/index.js`),
+      path: path.resolve(__dirname, `./packages/${packageName}/index.js`),
       vendor: VENDER_LIBS
     },
     output: {
