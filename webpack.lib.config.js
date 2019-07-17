@@ -17,7 +17,7 @@ function config(env) {
     },
     output: {
       path: path.resolve(__dirname, `./packages/${packageName}/`),
-      filename: 'index.js',
+      filename: '[name].[hash].js',
     },
       optimization: {
         splitChunks: {
