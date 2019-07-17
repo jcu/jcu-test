@@ -6,7 +6,8 @@
 		"lint": "eslint --ext .jsx --ext js ./packages/",
 		"styleguide": "styleguidist server --config ./styleguide/styleguide.config.js",
 		"styleguide:build": "rm -rf build && rm -f index.html && styleguidist build --config ./styleguide/styleguide.config.js",
-		"publish:npm": "lerna bootstrap && lerna exec --parallel yarn run build && lerna publish --contents dist --skip-git --registry=https://registry.npmjs.org/"
+		"publish:npm": "lerna exec --parallel yarn run build && lerna publish --skip-git --registry=https://registry.npmjs.org/",
+		"publish:npm1": "lerna bootstrap && lerna exec --parallel yarn run build && lerna publish --skip-git --registry=https://registry.npmjs.org/"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.4.4",

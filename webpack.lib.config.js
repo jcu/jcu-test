@@ -8,7 +8,7 @@ const VENDER_LIBS = [
 ]
 
 function config(env) {
-  const packageName = 'jcudate';
+  const packageName = env.pkg;
 
   return {
     entry: { 
@@ -16,8 +16,8 @@ function config(env) {
       vendor: VENDER_LIBS
     },
     output: {
-      path: path.resolve(__dirname, `./packages/${packageName}/`),
-      filename: '[name].[hash].js',
+      path: path.resolve(__dirname, `./packages/${packageName}/dist/`),
+      filename: 'index.js',
     },
       optimization: {
         splitChunks: {

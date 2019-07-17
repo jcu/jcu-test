@@ -1,0 +1,36 @@
+{
+  "name": "@jcu-test/layout",
+  "version": "0.0.1-alpha.0",
+  "description": "> TODO: description",
+  "author": "Mahendra Patel <mkumar.a.patel@gmail.com>",
+  "homepage": "https://github.com/jcu/jcu-test#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcu/jcu-test.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "webpack --config ../../webpack.lib.config.js --env.pkg=layout"
+  },
+  "bugs": {
+    "url": "https://github.com/jcu/jcu-test/issues"
+  },
+  "gitHead": "fa0797f808c2fcd3b49768aa1361ba570e53cb7e",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
