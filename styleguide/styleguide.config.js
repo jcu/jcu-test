@@ -10,14 +10,15 @@ module.exports = {
       content: './README.md',
     },
     {
-      name: 'JCU Utility Components',
+      name: 'Utility Components',
       components: () => ([
         // Add Components here
-        '../packages/jcudate/**/*.js'
+        '../packages/jcudate/**/*.js',
+        '../packages/validators/**/*.js'
       ]),
     },
     {
-      name: 'JCU Layout Components',
+      name: 'Layout Components',
       components: () => ([
         // Add Components here
         '../packages/layout/**/JcuNavBar.js',
@@ -25,6 +26,10 @@ module.exports = {
         '../packages/layout/**/Footer.js'        
         
       ]),
+    },
+    {
+      name: 'Tools and Utilities',
+      content: './utils_docs.md',
     },
   ],
   template: {

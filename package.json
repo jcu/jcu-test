@@ -4,8 +4,9 @@
 	"scripts": {
 		"bootstrap": "lerna bootstrap",
 		"lint": "eslint --ext .jsx --ext js ./packages/",
-		"styleguide": "styleguidist server --config ./styleguide/styleguide.config.js",
-		"styleguide:build": "rm -rf build && rm -f index.html && styleguidist build --config ./styleguide/styleguide.config.js",
+		"sg:pre": "jsdoc2md ./packages/datamodels/**/*.js > ./styleguide/utils_docs.md",
+		"sg": "styleguidist server --config ./styleguide/styleguide.config.js",
+		"sg:build": "rm -rf build && rm -f index.html && styleguidist build --config ./styleguide/styleguide.config.js",
 		"publish:npm": "lerna bootstrap && lerna exec --parallel yarn run build && lerna publish --skip-git --registry=https://registry.npmjs.org/"
 	},
 	"devDependencies": {
@@ -38,13 +39,14 @@
 		"grommet": "^2.5.5",
 		"grommet-controls": "^1.1.19",
 		"icons": "^1.0.0",
+		"jsdoc-to-markdown": "^5.0.0",
 		"moment": "^2.24.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"react-router-dom": "^5.0.1",
-		"rimraf": "^2.6.3",
 		"reactjs-popup": "^1.4.0",
+		"rimraf": "^2.6.3",
 		"styled-components": "^4.2.0"
 	},
 	"workspaces": [
