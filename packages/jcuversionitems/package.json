@@ -1,6 +1,6 @@
 {
   "name": "@jcu-test/jcuversionitems",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "description": "JCU version items test",
   "homepage": "https://github.com/jcu/jcu-test#readme",
   "source": "src/index.js",
