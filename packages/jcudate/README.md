@@ -2,4 +2,5 @@
 
 ```js
 <JcuDate/>
+<JcuDateTime />
 ```
