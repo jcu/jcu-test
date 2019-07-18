@@ -3,23 +3,24 @@ const path = require('path');
 const webpack = require('webpack');
 
 
-const VENDER_LIBS = [
+/* const VENDER_LIBS = [
   'react', 'react-dom','react-router-dom'
-]
+] */
 
 function config(env) {
   const packageName = env.pkg;
 
   return {
     entry: { 
-      path: path.resolve(__dirname, `./packages/${packageName}/src/index.js`),
-      vendor: VENDER_LIBS
+      path: path.resolve(__dirname, `./packages/${packageName}/src/index.js`)
+     // vendor: VENDER_LIBS
     },
     output: {
-      path: path.resolve(__dirname, `./packages/${packageName}/dist/`),
+      path: path.resolve(__dirname, `./packages/${packageName}/`),
       filename: 'index.js',
+      libraryTarget: 'commonjs2'
     },
-      optimization: {
+/*       optimization: {
         splitChunks: {
             cacheGroups: {
                 commons: {
@@ -29,7 +30,7 @@ function config(env) {
                 }
             }
         }
-      },
+      }, */
       module: {
       rules: [
         // JavaScript/JSX Files
