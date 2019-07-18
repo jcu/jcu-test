@@ -13,16 +13,18 @@ module.exports = {
       name: 'JCU Utility Components',
       components: () => ([
         // Add Components here
-        '../packages/jcudate/**/*.js'
+        '../packages/jcudate/**/src/JcuDateTime.js',
+        '../packages/jcudate/**/src/JcuDate.js',
+        '../packages/jcudate/**/src/JcuTime.js'
       ]),
     },
     {
       name: 'JCU Layout Components',
       components: () => ([
         // Add Components here
-        '../packages/layout/**/JcuNavBar.js',
-        '../packages/layout/**/JcuEnvironmentBanner.js',
-        '../packages/layout/**/Footer.js'        
+        '../packages/layout/**/src/JcuNavBar.js',
+        '../packages/layout/**/src/JcuEnvironmentBanner.js',
+        '../packages/layout/**/src/Footer.js'        
         
       ]),
     },
