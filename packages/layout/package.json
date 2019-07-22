@@ -1,6 +1,6 @@
 {
   "name": "@jcu-test/layout",
-  "version": "0.0.5-alpha.0",
+  "version": "0.0.4-alpha.0",
   "description": "> TODO: description",
   "author": "Mahendra Patel <mkumar.a.patel@gmail.com>",
   "homepage": "https://github.com/jcu/jcu-test#readme",
@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/jcu/jcu-test/issues"
   },
-  "gitHead": "fa0797f808c2fcd3b49768aa1361ba570e53cb7e",
+  "gitHead": "9424ed81bc4117947b4a47f8c1eca64e0c984522",
   "dependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",

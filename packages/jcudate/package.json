@@ -1,6 +1,6 @@
 {
   "name": "@jcu-test/jcudate",
-  "version": "0.0.25-alpha.0",
+  "version": "0.0.24-alpha.0",
   "description": "> TODO: description",
   "author": "Mahendra Patel <mkumar.a.patel@gmail.com>",
   "homepage": "https://github.com/jcu/jcu-test#readme",
@@ -14,7 +14,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "https://secure.jcu.edu.au/artifactory/api/npm/npm-local/"
+    "registry":"https://secure.jcu.edu.au/artifactory/api/npm/npm-local/"
   },
   "repository": {
     "type": "git",
