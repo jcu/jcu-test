@@ -6,7 +6,7 @@
 var linkSchema = require('./commonDataSchema.js').linkSchema
 
 /**
- * @alias appConfigSchema.environment
+ *
  * 
  * A JSON Schema to validate configuration for a run-time 
  * environment description. This is intended to capture the 
@@ -21,6 +21,7 @@ var linkSchema = require('./commonDataSchema.js').linkSchema
  * | `name` | optional  | A string name. If omitted, defaults to the `type`
  * | `description` | optional | A string description, in Markdown format.
  * 
+ * @alias "environment"
  */
 var environmentSchema = {
     "id": "/environment",
