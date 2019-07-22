@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/jcu/jcu-test/issues"
   },
-  "gitHead": "9424ed81bc4117947b4a47f8c1eca64e0c984522",
+  "gitHead": "11518405ce409e4068ddb13d1415ffea18c546af",
   "dependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
