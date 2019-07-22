@@ -13,7 +13,8 @@
     "index.js"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry":"https://secure.jcu.edu.au/artifactory/api/npm/npm-local/"
   },
   "repository": {
     "type": "git",
